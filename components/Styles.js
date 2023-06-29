@@ -9,8 +9,23 @@ export const styles = StyleSheet.create({
             alignItems: 'center',
             justifyContent: 'center',
         },
+        containerDetails: {
+            flex: 1,
+            backgroundColor: '#1E2124',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: 30,
+        },
         contentContainer: {
             flex: 1,
+        },
+        detailsButton: {
+            backgroundColor: '#F9C74F',
+            color: '#000000',
+            padding: 15,
+            width: "30%",
+            borderRadius: 20,
+            textAlign: 'center',
         },
         navbarButtonActive: {
             backgroundColor: '#F9C74F',
@@ -45,6 +60,9 @@ export const styles = StyleSheet.create({
             height: '100%',
         },
         itemPriceCategoryOne: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#2D3136',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -57,6 +75,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryTwo: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#32363A',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -69,6 +90,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryThree: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#292C30',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -81,6 +105,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryFour: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#34383D',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -93,6 +120,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryFive: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#363B41',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -105,6 +135,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategorySix: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#34383D',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -116,6 +149,10 @@ export const styles = StyleSheet.create({
             marginHorizontal: 8,
             borderRadius: 15,
         },
+        detailsPageText: {
+            fontSize: 20,
+            color: '#FFFAF0',
+        },
         listItemText: {
             color: '#FFFAF0',
         },
@@ -126,9 +163,21 @@ export const styles = StyleSheet.create({
             fontSize: 30,
             color: '#FFF',
         },
+        detailsIsFavorite: {
+            color: '#F94144',
+            paddingTop: 15,
+        },
         picker: {
             color: '#FFF',
-        }
+        },
+        favoriteHeart: {
+            color: '#FFF',
+            fontSize: 30
+        },
+        favoriteHeartActive: {
+            color: '#F94144',
+            fontSize: 30
+        },
     },
     lightMode: {
         container: {
@@ -136,6 +185,17 @@ export const styles = StyleSheet.create({
             backgroundColor: '#FFF1E3',
             alignItems: 'center',
             justifyContent: 'center',
+        },
+        containerDetails: {
+            flex: 1,
+            backgroundColor: '#FFF1E3',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: 30,
+        },
+        detailsIsFavorite: {
+            color: '#F94144',
+            paddingTop: 15,
         },
         contentContainer: {
             flex: 1,
@@ -145,6 +205,22 @@ export const styles = StyleSheet.create({
             color: '#577590',
             padding: 15,
             width: "20%",
+            borderRadius: 20,
+            textAlign: 'center',
+        },
+        detailsButton: {
+            backgroundColor: '#F9C74F',
+            color: '#000000',
+            padding: 15,
+            width: "30%",
+            borderRadius: 20,
+            textAlign: 'center',
+        },
+        detailsFavorited: {
+            backgroundColor: '#F94144',
+            color: '#000000',
+            padding: 15,
+            width: "30%",
             borderRadius: 20,
             textAlign: 'center',
         },
@@ -173,6 +249,9 @@ export const styles = StyleSheet.create({
             height: '100%',
         },
         itemPriceCategoryOne: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#f7fff9',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -185,6 +264,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryTwo: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#fdfff8',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -197,6 +279,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryThree: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#fff3e1',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -209,6 +294,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryFour: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#ffe9da',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -221,6 +309,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategoryFive: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#ffe7db',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -233,6 +324,9 @@ export const styles = StyleSheet.create({
             borderRadius: 15,
         },
         itemPriceCategorySix: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             backgroundColor: '#ffe9e9',
             borderStyle: 'solid',
             borderLeftWidth: 15,
@@ -252,7 +346,19 @@ export const styles = StyleSheet.create({
         },
         heading: {
             fontSize: 30
-        }
+        },
+        detailsPageText: {
+            fontSize: 20,
+            color: '#11100d',
+        },
+        favoriteHeart: {
+            color: '#11100d',
+            fontSize: 30
+        },
+        favoriteHeartActive: {
+            color: '#F94144',
+            fontSize: 30
+        },
     }
 
 });

@@ -10,7 +10,7 @@ import {AppContext} from "../store/context";
 
 
 
-export const MapScreen = ({currentRestaurant}) => {
+export const MapScreen = ({route}) => {
     const {theme,setTheme} = useContext(AppContext);
     const stylesheet = {... (theme === 'light' ? styles.lightMode : styles.darkMode),};
     const [mcDonaldsLocations, setMcDonaldsLocations] = useState([]);
@@ -47,6 +47,10 @@ export const MapScreen = ({currentRestaurant}) => {
         markerLocation = undefined
     }
 
+    let currentRestaurant = route.params?.currentRestaurant;
+
+    console.log(currentRestaurant)
+
     return (
         <View style={stylesheet.container}>
             <MapView
@@ -54,8 +58,8 @@ export const MapScreen = ({currentRestaurant}) => {
                 region={{
                     latitude: currentRestaurant !== undefined ? currentRestaurant.latitude : 51.9175,
                     longitude: currentRestaurant !== undefined ? currentRestaurant.longitude : 4.4796,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.1821,
+                    latitudeDelta: currentRestaurant !== undefined ? 0.0422 : 0.0822,
+                    longitudeDelta: currentRestaurant !== undefined ? 0.0122 :0.1821,
                 }}
                 {...(theme === 'dark' ? { customMapStyle: nightMapStyle } : {})} // Apply the night map style only when theme is dark
             >

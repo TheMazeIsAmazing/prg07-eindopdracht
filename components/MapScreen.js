@@ -2,16 +2,17 @@ import * as Location from "expo-location";
 import { Image, View } from "react-native";
 import { styles } from "./Styles";
 import MapView, { Marker } from "react-native-maps";
-import { useEffect, useState } from "react";
+import {useContext, useEffect, useState} from "react";
 import { fetchRestaurantData } from "../functions/fetchRestaurantData";
 import { centsToEuros } from "../functions/centsToEuros";
 import nightMapStyle from '../DarkModeMapsTheme.json'; // Import the JSON style file
-import {theme} from "../functions/theme";
-import {stylesheet} from "../functions/stylesheet";
+import {AppContext} from "../store/context";
 
 
 
 export const MapScreen = ({currentRestaurant}) => {
+    const {theme,setTheme} = useContext(AppContext);
+    const stylesheet = {... (theme === 'light' ? styles.lightMode : styles.darkMode),};
     const [mcDonaldsLocations, setMcDonaldsLocations] = useState([]);
     const [location, setLocation] = useState(null);
 

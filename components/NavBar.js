@@ -1,12 +1,12 @@
 import { Text, View } from "react-native";
-import { styles } from "./Styles";
+import {stylesheet} from "../functions/stylesheet";
 
 export const NavBar = ({navigation, currentPage}) => {
     return (
-        <View style={styles.navbar}>
-            <Text onPress={() => navigation.navigate('Home')} style={currentPage === 'Home' ? styles.navbarButtonActive : styles.navbarButton}>Home</Text>
-            <Text onPress={() => navigation.navigate('Map')} style={currentPage === 'Map' ? styles.navbarButtonActive : styles.navbarButton}>Map</Text>
-            <Text onPress={() => navigation.navigate('Settings', { name: 'Jane' })} style={currentPage === 'Settings' ? styles.navbarButtonActive : styles.navbarButton}>Settings</Text>
+        <View style={stylesheet.navbar}>
+            <Text onPress={() => navigation.navigate('Home')} style={currentPage === 'Home' ? stylesheet.navbarButtonActive : stylesheet.navbarButton}>Home</Text>
+            <Text onPress={() => navigation.navigate('Map')} style={currentPage === 'Map' ? stylesheet.navbarButtonActive : stylesheet.navbarButton}>Map</Text>
+            <Text onPress={() => navigation.navigate('Settings', { name: 'Jane' })} style={currentPage === 'Settings' ? stylesheet.navbarButtonActive : stylesheet.navbarButton}>Settings</Text>
         </View>
 
     );

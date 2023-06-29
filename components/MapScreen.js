@@ -1,12 +1,29 @@
 import * as Location from "expo-location";
-import { Button, Image, View } from "react-native";
+import { Image, View } from "react-native";
 import { styles } from "./Styles";
 import MapView, { Marker } from "react-native-maps";
-import { mcDonaldsLocations } from "../TemporaryJsonMcDonalds";
 import { useEffect, useState } from "react";
+import { fetchRestaurantData } from "../functions/fetchRestaurantData";
+import { centsToEuros } from "../functions/centsToEuros";
+import nightMapStyle from '../DarkModeMapsTheme.json'; // Import the JSON style file
+import {theme} from "../functions/theme";
+import {stylesheet} from "../functions/stylesheet";
+
+
 
 export const MapScreen = ({currentRestaurant}) => {
+    const [mcDonaldsLocations, setMcDonaldsLocations] = useState([]);
     const [location, setLocation] = useState(null);
+
+    useEffect(() => {
+        const fetchLocations = async () => {
+            const data = await fetchRestaurantData();
+            setMcDonaldsLocations(data);
+        };
+
+        fetchLocations();
+    }, []);
+
 
     useEffect(() => {
         (async () => {
@@ -30,24 +47,20 @@ export const MapScreen = ({currentRestaurant}) => {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={stylesheet.container}>
             <MapView
-                style={styles.map}
+                style={stylesheet.map}
                 region={{
                     latitude: currentRestaurant !== undefined ? currentRestaurant.latitude : 51.9175,
                     longitude: currentRestaurant !== undefined ? currentRestaurant.longitude : 4.4796,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.1821,
                 }}
+                {...(theme === 'dark' ? { customMapStyle: nightMapStyle } : {})} // Apply the night map style only when theme is dark
             >
                 {mcDonaldsLocations.map((marker, i) => {
                     let imageSource;
-                    let price = `€ ${marker.priceBigMac / 100}`
-                    if (price.length < 4) {
-                        price =    `${price},-`
-                    } else if (price.length < 6) {
-                        price =    `${price}0`
-                    }
+                    let price = centsToEuros(marker.priceBigMac)
                     if (marker.priceBigMac < 405) {
                         imageSource = require('../assets/markers/cat1.png');
                     } else if (marker.priceBigMac < 445) {
@@ -67,7 +80,7 @@ export const MapScreen = ({currentRestaurant}) => {
                             key={i}
                             coordinate={{ longitude: marker.longitude, latitude: marker.latitude }}
                             title={marker.name}
-                            description={`Een Big Mac kost hier: ${price}`}
+                            description={`The price of a Big Mac at this location is: ${price}`}
                         >
                             <Image source={imageSource} style={{ height: 32, width: 21 }} />
                         </Marker>

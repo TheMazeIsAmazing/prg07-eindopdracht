@@ -49,8 +49,6 @@ export const MapScreen = ({route}) => {
 
     let currentRestaurant = route.params?.currentRestaurant;
 
-    console.log(currentRestaurant)
-
     return (
         <View style={stylesheet.container}>
             <MapView

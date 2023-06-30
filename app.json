@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "prg07-eindopdracht",
-    "slug": "prg07-eindopdracht",
+    "name": "MacSaver010",
+    "slug": "mac-saver-010",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,11 +20,14 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-localization"
+    ]
   }
 }

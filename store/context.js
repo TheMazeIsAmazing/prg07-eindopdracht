@@ -1,11 +1,11 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Appearance} from 'react-native';
 
 const AppContext = createContext();
 
-const AppContextProvider = ({ children }) => {
-    const [theme, setTheme] = useState(Appearance.getColorScheme());
+const AppContextProvider = ({children}) => {
+    const [theme, setTheme] = useState(Appearance.getColorScheme());  // Initialize theme state with the device's current color scheme
 
     useEffect(() => {
         // Load the theme from async storage on component mount
@@ -26,7 +26,7 @@ const AppContextProvider = ({ children }) => {
     const setAndStoreTheme = async (newTheme) => {
         try {
             setTheme(newTheme);
-            await AsyncStorage.setItem('theme', newTheme);
+            await AsyncStorage.setItem('theme', newTheme);  // Store the new theme in async storage
         } catch (error) {
             console.error('Error storing theme in AsyncStorage:', error);
         }
@@ -34,11 +34,11 @@ const AppContextProvider = ({ children }) => {
 
     return (
         <AppContext.Provider
-            value={{ theme, setTheme: setAndStoreTheme }}
+            value={{theme, setTheme: setAndStoreTheme}}
         >
             {children}
         </AppContext.Provider>
     );
 };
 
-export { AppContext, AppContextProvider };
+export {AppContext, AppContextProvider};

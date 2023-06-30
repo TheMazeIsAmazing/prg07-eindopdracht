@@ -4,7 +4,7 @@ import {AppContextProvider} from './store/context';
 export default function App() {
     return (
         <AppContextProvider>
-            <AppComponent />
+            <AppComponent/>
         </AppContextProvider>
     );
 }

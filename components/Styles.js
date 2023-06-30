@@ -156,6 +156,20 @@ export const styles = StyleSheet.create({
         listItemText: {
             color: '#FFFAF0',
         },
+        settingsPageLabel: {
+            color: '#FFFAF0',
+            fontSize: 18,
+            paddingTop: 15,
+        },
+        settingsButton: {
+            backgroundColor: '#F9C74F',
+            color: '#000000',
+            padding: 15,
+            marginTop: 15,
+            width: "80%",
+            borderRadius: 20,
+            textAlign: 'center',
+        },
         flatList: {
             width: 350,
         },
@@ -341,6 +355,21 @@ export const styles = StyleSheet.create({
         listItemText: {
             color: '#11100d',
         },
+        settingsPageLabel: {
+            color: '#11100d',
+            fontSize: 18,
+            paddingTop: 15,
+        },
+        settingsButton: {
+            backgroundColor: '#F9C74F',
+            color: '#000000',
+            padding: 15,
+            marginTop: 15,
+            width: "80%",
+            borderRadius: 20,
+            textAlign: 'center',
+        },
+
         flatList: {
             width: 350
         },
